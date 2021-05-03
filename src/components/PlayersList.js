@@ -19,12 +19,9 @@ const PlayersList = (props) => {
     setCheckedItems(clearCheckedItems);
   };
 
-  let ary = [];
-  for (let [key, value] of checkedItems.entries()) {
-    if (value === true) {
-      ary.push(key);
-    }
-  }
+  useEffect(() => {
+    props.setItems(checkedItems);
+  }, [checkedItems]);
 
   const checkboxesToRender = props.players.map((item, index) => {
     return (

@@ -24,8 +24,12 @@ const App = (props) => {
     teamTwoName: "",
   });
 
-  const handleTeamSelection = () => {
+  const handleGenerateTeam = () => {
     console.log(team);
+  };
+
+  const getCheckedItems = (items) => {
+    console.log(items);
   };
 
   return (
@@ -88,6 +92,7 @@ const App = (props) => {
             <div className="px-4 py-2">
               {team.teamOneLabel !== "" && (
                 <PlayersList
+                  setItems={getCheckedItems}
                   players={
                     team.teamOneLabel === "mumbai"
                       ? mumbai
@@ -123,6 +128,7 @@ const App = (props) => {
             <div className="px-4 py-2">
               {team.teamOneLabel !== "" && (
                 <PlayersList
+                  setItems={getCheckedItems}
                   players={
                     team.teamTwoLabel === "mumbai"
                       ? mumbai
@@ -148,7 +154,7 @@ const App = (props) => {
           </div>
           <div className="p-2">
             <button
-              onClick={handleTeamSelection}
+              onClick={handleGenerateTeam}
               className="focus:outline-none text-white bg-red-500 w-full p-2"
             >
               <Text>Generate Team</Text>
