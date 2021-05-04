@@ -28,13 +28,13 @@ const PlayersList = (props) => {
       <div key={index} className="py-1.5 ">
         <label>
           <Checkbox
-            name={item.name}
-            checked={checkedItems.get(item.name)}
+            name={item.playername + '-' + item.playerteam + '-' + item.playerrole}
+            checked={checkedItems.get(item.playername)}
             onChange={handleChange}
             type="checkbox"
           />
           <span className="ml-2">
-            <Text variant="primary">{item.name}</Text>
+            <Text variant="primary">{item.playername}</Text>
           </span>
         </label>
       </div>
